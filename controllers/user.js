@@ -1,8 +1,8 @@
-const {response, request} = require('express')
+const { response, request } = require('express')
 
 const usersGet = (req = request, res = response) => {
-    
-    const {q, name, apikey,page,limit} = req.query
+
+    const { q, name, apikey, page, limit } = req.query
 
     res.json({
         msg: 'get API - controller',
@@ -16,7 +16,7 @@ const usersGet = (req = request, res = response) => {
 
 const usersPost = (req = request, res = response) => {
 
-    const {name,age} = req.body
+    const { name, age } = req.body
 
     res.json({
         msg: 'post API - controller',
