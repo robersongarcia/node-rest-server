@@ -36,11 +36,11 @@ const usersPost = async (req = request, res = response) => {
 
     user.password = bcryptjs.hashSync(password, salt)
 
-    user.save()
+    user.save()    
 
     res.json({
         msg: 'post API - controller',
-        user
+        
     })
 }
 
