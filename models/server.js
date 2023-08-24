@@ -2,6 +2,7 @@ const express = require('express')
 require('dotenv').config()
 const cors = require('cors')
 const { dbConnection } = require('../database/config')
+const fileUpload = require('express-fileupload')
 
 class Server {
 
@@ -34,6 +35,13 @@ class Server {
 
         //read and parse of body
         this.app.use(express.json())
+
+        //file uploads
+        this.app.use(fileUpload({
+            useTempFiles : true,
+            tempFileDir : '/tmp/',
+            limits: {fieldSize: 50 * 1024 * 1024}
+        }));
     }
 
     listen() {
